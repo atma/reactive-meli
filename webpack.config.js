@@ -7,7 +7,8 @@ var ROOT_PATH = path.resolve(__dirname);
 var cssLoaders = ['style', 'css', 'autoprefixer-loader?browsers=last 5 versions'];
 
 module.exports = {
-    entry: path.resolve(ROOT_PATH, 'app/main'),
+    entry: path.resolve(ROOT_PATH, 'app/main.jsx')
+    ,
     output: {
         path: path.resolve(ROOT_PATH, 'build'),
         filename: 'bundle.js'
@@ -20,6 +21,11 @@ module.exports = {
     },
     module: {
         loaders: [
+            {
+                test: /\.jsx?$/,
+                loaders: ['react-hot', 'babel'],
+                include: path.resolve(ROOT_PATH, 'app')
+            },
             {
                 test: /\.css$/,
                 loaders: cssLoaders,
