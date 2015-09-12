@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/atma/reactive-meli#readme",
   "devDependencies": {
+    "css-loader": "^0.18.0",
     "html-webpack-plugin": "^1.6.1",
     "node-libs-browser": "^0.5.2",
+    "style-loader": "^0.12.3",
     "webpack": "^1.12.1",
     "webpack-dev-server": "^1.10.1"
   }
