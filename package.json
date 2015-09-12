@@ -1,0 +1,26 @@
+{
+  "name": "reactive-meli",
+  "version": "0.0.1",
+  "description": "Mercadolibre demo site made with React and built by webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atma/reactive-meli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atma/reactive-meli/issues"
+  },
+  "homepage": "https://github.com/atma/reactive-meli#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^1.6.1",
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.12.1",
+    "webpack-dev-server": "^1.10.1"
+  }
+}
