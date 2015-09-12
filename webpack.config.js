@@ -30,6 +30,10 @@ module.exports = {
                 loaders: cssLoaders.concat([
                     "sass?precision=10&outputStyle=expanded&sourceMap=true&includePaths[]=" + path.resolve(__dirname, './app')
                 ])
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+                loader: 'url?limit=10000'
             }
         ]
     },
