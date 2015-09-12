@@ -4,6 +4,8 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 
 var ROOT_PATH = path.resolve(__dirname);
 
+var cssLoaders = ['style', 'css', 'autoprefixer-loader?browsers=last 5 versions'];
+
 module.exports = {
     entry: path.resolve(ROOT_PATH, 'app/main'),
     output: {
@@ -20,8 +22,14 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loaders: ['style', 'css'],
+                loaders: cssLoaders,
                 include: path.resolve(ROOT_PATH, 'app')
+            },
+            {
+                test: /\.scss$/,
+                loaders: cssLoaders.concat([
+                    "sass?precision=10&outputStyle=expanded&sourceMap=true&includePaths[]=" + path.resolve(__dirname, './app')
+                ])
             }
         ]
     },
