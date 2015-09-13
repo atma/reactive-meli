@@ -4,7 +4,7 @@
   "description": "Mercadolibre demo site made with React and built by webpack",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "NODE_ENV=development webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

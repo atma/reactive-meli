@@ -8,7 +8,11 @@ var ROOT_PATH = path.resolve(__dirname);
 
 var cssLoaders = [
     'style',
-    'css?modules&importLoaders=1!postcss'
+    'css?modules&importLoaders=1&localIdentName=' + (
+        process.env.NODE_ENV === 'production' ?
+            '[hash:base64:7]' :
+            '[name]__[local]___[hash:base64:5]'
+    ) + '!postcss'
 ];
 
 module.exports = {

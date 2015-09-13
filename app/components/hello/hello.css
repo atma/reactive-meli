@@ -1,4 +1,4 @@
 :local(.heading) {
+  composes: heading-main from "../../styles/typography.css";
   color: #c00;
 }
-
