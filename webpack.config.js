@@ -1,10 +1,15 @@
-var webpack = require('webpack');
-var path = require('path');
-var HtmlwebpackPlugin = require('html-webpack-plugin');
+var webpack                 = require('webpack');
+var path                    = require('path');
+var HtmlwebpackPlugin       = require('html-webpack-plugin');
+var autoprefixer            = require('autoprefixer');
+var precss                  = require('precss');
 
 var ROOT_PATH = path.resolve(__dirname);
 
-var cssLoaders = ['style', 'css', 'autoprefixer-loader?browsers=last 5 versions'];
+var cssLoaders = [
+    'style',
+    'css?modules&importLoaders=1!postcss'
+];
 
 module.exports = {
     entry: path.resolve(ROOT_PATH, 'app/main.jsx')
@@ -27,15 +32,9 @@ module.exports = {
                 include: path.resolve(ROOT_PATH, 'app')
             },
             {
-                test: /\.css$/,
+                test: /\.s?css$/,
                 loaders: cssLoaders,
                 include: path.resolve(ROOT_PATH, 'app')
-            },
-            {
-                test: /\.scss$/,
-                loaders: cssLoaders.concat([
-                    "sass?precision=10&outputStyle=expanded&sourceMap=true&includePaths[]=" + path.resolve(__dirname, './app')
-                ])
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
@@ -43,6 +42,12 @@ module.exports = {
             }
         ]
     },
+    postcss: [
+        autoprefixer({ browsers: [
+            'last 5 versions'
+        ]}),
+        precss
+    ],
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlwebpackPlugin({

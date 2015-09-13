@@ -1,5 +1,5 @@
 import React from 'react';
-import Hello from './components/hello.jsx';
+import Hello from './components/hello/hello.jsx';
 
 import './app.scss';
 
