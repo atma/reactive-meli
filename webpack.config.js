@@ -4,6 +4,7 @@ var path                    = require('path');
 var HtmlwebpackPlugin       = require('html-webpack-plugin');
 var ExtractTextPlugin       = require('extract-text-webpack-plugin');
 var Clean                   = require('clean-webpack-plugin');
+var AssetsPlugin            = require('assets-webpack-plugin');
 var autoprefixer            = require('autoprefixer');
 var precss                  = require('precss');
 var pkg                     = require('./package.json');
@@ -110,6 +111,10 @@ if (ENV === 'production') {
                 compress: {
                     warnings: false
                 }
+            }),
+            new AssetsPlugin({
+                path: path.resolve(ROOT_PATH, 'build'),
+                filename: 'assets.json'
             }),
             new HtmlwebpackPlugin({
                 title: APP_TITLE

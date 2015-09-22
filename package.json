@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/atma/reactive-meli#readme",
   "devDependencies": {
+    "assets-webpack-plugin": "^2.2.2",
     "autoprefixer": "^6.0.2",
     "babel-core": "^5.8.24",
     "babel-loader": "^5.3.2",
