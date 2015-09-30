@@ -1,9 +1,7 @@
 import React from 'react';
-import Hello from './components/hello/hello.jsx';
-
-import './app.scss';
+import App from './app.jsx';
 
 const app = document.createElement('div');
 document.body.appendChild(app);
 
-React.render(<Hello />, app);
+React.render(<App />, app);

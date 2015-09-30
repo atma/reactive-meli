@@ -24,7 +24,10 @@ var commonConfig = {
             'last 5 versions'
         ]}),
         precss
-    ]
+    ],
+    resolve: {
+        modulesDirectories: ['node_modules', 'app']
+    }
 };
 
 if (ENV === 'development') {
