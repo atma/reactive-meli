@@ -4,8 +4,9 @@
   "description": "Mercadolibre demo site made with React and built by webpack",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server",
-    "build": "NODE_ENV=production webpack",
+    "start": "NODE_ENV=production node index",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "build": "NODE_ENV=production webpack --stats --config ./webpack/config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +30,7 @@
     "file-loader": "^0.8.4",
     "html-webpack-plugin": "^1.6.1",
     "node-libs-browser": "^0.5.2",
+    "nodemon": "^1.7.1",
     "postcss-import": "^7.0.0",
     "postcss-loader": "^0.6.0",
     "precss": "^1.1.2",
@@ -40,6 +42,14 @@
     "webpack-merge": "^0.2.0"
   },
   "dependencies": {
-    "react": "^0.13.3"
+    "body-parser": "^1.14.1",
+    "compression": "^1.6.0",
+    "cookie-parser": "^1.4.0",
+    "csurf": "^1.8.3",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1",
+    "react": "^0.13.3",
+    "serve-favicon": "^2.3.0",
+    "serve-static": "^1.10.0"
   }
 }

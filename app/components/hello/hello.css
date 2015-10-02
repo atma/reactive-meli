@@ -2,3 +2,8 @@
   composes: heading-main from "../../styles/typography.css";
   color: #c00;
 }
+:local(.sites) {
+  list-style: none;
+  font-size: 2rem;
+  font-weight: bold;
+}
